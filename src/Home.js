@@ -1,6 +1,7 @@
 import React from "react";
-import {Query} from "react-apollo";
+import { Query } from "react-apollo";
 import styled from "styled-components";
+import { Helmet } from "react-helmet";
 import {MOVIE_PAGE} from "./queries";
 import Movie from "./Movie";
 
@@ -13,6 +14,9 @@ const Container = styled.div`
 
 const Home = () => (
     <Container>
+        <Helmet>
+            <title>Home | MovieQL</title>
+        </Helmet>
         <Query query={MOVIE_PAGE}>
         {
             ({ loading, data, error }) => {
